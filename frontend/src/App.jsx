@@ -10,7 +10,7 @@ function App() {
   // Fetch locations on mount
   useEffect(() => {
     setLoading(true);
-    axios.get("http://localhost:5000/api/locations")
+    axios.get("https://eventswebscraper.onrender.com/api/locations")
       .then(res => setLocations(res.data))
       .finally(() => setLoading(false));
   }, []);
@@ -21,7 +21,7 @@ function App() {
     setSelected(city);
     setLoading(true);
 
-    axios.get(`http://localhost:5000/api/events?city=${city}`)
+    axios.get(`https://eventswebscraper.onrender.com/api/events?city=${city}`)
       .then(res => setEvents(res.data))
       .finally(() => setLoading(false));
   };
